@@ -1,0 +1,13 @@
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+    color: #f0f0f0;
+}
+
+@supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+}
+
+p, h1, h2, h3, h4 {
+    color: #f0f0f0;
+}
