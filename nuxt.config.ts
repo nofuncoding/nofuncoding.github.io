@@ -20,4 +20,9 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   ssr: false, // github pages
+  content: {
+    experimental: {
+        clientDb: true // github pages
+    }
+},
 })
