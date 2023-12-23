@@ -16,7 +16,8 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
       ],
     },
+    buildAssetsDir: "/static/", // github pages
   },
   css: ['~/assets/css/main.css'],
-  ssr: false,
+  ssr: false, // github pages
 })
