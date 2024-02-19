@@ -19,7 +19,17 @@
       <ul>
         <li>
           <NuxtLink to="https://github.com/nofuncoding">
-            <Icon name="uil:github" />
+            <Icon size="24px" name="uil:github" />
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="https://www.buymeacoffee.com/nofun_404hz">
+            <Icon size="24px" name="line-md:buy-me-a-coffee-filled" />
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="https://www.buymeacoffee.com/nofun_404hz">
+            <img src="/afd logo.svg" width="24px" height="24px" style="border-radius: 100%" alt="afdian" />
           </NuxtLink>
         </li>
       </ul>
@@ -87,6 +97,15 @@
   border-right: none;
   margin-right: 0;
   padding-right: 0;
+}
+
+.me .ext-links ul li {
+  float: left;
+  margin-right: 15px;
+}
+
+.me .ext-links ul li:last-child {
+  margin-right: 0;
 }
 
 .me .ext-links ul li a {
