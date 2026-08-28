@@ -15,16 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup
+        uses: pnpm/setup@v1
         with:
-          node-version: '26'
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install
+          version: latest
+          runtime: node@26
+          cache: true
 
       - name: Build
         run: pnpm run build
@@ -43,4 +41,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
