@@ -21,7 +21,7 @@ export default defineConfig({
 			adapter: adapter({
 	            pages: 'build',
             	assets: 'build',
-            	//fallback: '404.html', // 404.svelte is used for SPA fallback
+            	fallback: '404.html', // 404.svelte is used for SPA fallback
 			}),
 			preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],
 			extensions: ['.svelte', '.svx', '.md']
