@@ -6,6 +6,10 @@
 	import favicon from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
+
+	// placed here since there is no main.ts in SvelteKit
+	// and this is the only place that is guaranteed to be loaded first
+	import 'virtual:uno.css'
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>

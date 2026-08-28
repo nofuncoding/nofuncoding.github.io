@@ -1,8 +1,10 @@
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import { mdsvex } from 'mdsvex';
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+
+import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
 	plugins: [
@@ -16,7 +18,11 @@ export default defineConfig({
 			// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
 			// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
 			// See https://svelte.dev/docs/kit/adapters for more information about adapters.
-			adapter: adapter(),
+			adapter: adapter({
+	            pages: 'build',
+            	assets: 'build',
+            	//fallback: '404.html', // 404.svelte is used for SPA fallback
+			}),
 			preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],
 			extensions: ['.svelte', '.svx', '.md']
 		}),
@@ -25,6 +31,8 @@ export default defineConfig({
 			project: './project.inlang',
 			outdir: './src/lib/paraglide',
 			emitTsDeclarations: true
-		})
+		}),
+
+		UnoCSS(),
 	]
 });
